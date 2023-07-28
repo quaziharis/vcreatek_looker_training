@@ -62,6 +62,11 @@ view: products {
     sql: ${TABLE}.ProductPrice ;;
   }
 
+  measure: product_price_sum {
+    type: sum
+    sql: ${TABLE}.ProductPrice  ;;
+  }
+
   dimension: product_size {
     type: string
     sql: ${TABLE}.ProductSize ;;

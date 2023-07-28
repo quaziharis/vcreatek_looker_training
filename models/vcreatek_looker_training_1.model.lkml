@@ -39,11 +39,28 @@ explore: returns {}
 
 explore: reviews_data {}
 
-explore: sales2015 {}
+explore: sales2015 {
+  join: products {
+    type: left_outer
+    relationship: many_to_one
+    sql_on: ${sales2015.product_key}=${products.product_key} ;;
+  }
+
+  join: customer {
+    type: left_outer
+    relationship: many_to_one
+    sql_on: ${sales2015.customer_key}=${customer.customer_key} ;;
+  }
+
+  join: territories {
+    type: left_outer
+    relationship: many_to_one
+    sql_on: ${sales2015.territory_key}=${territories.sales_territory_key} ;;
+  }
+}
 
 explore: sales2016 {}
 
 explore: sales2017 {}
 
 explore: territories {}
-
