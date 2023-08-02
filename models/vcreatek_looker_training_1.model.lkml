@@ -57,6 +57,12 @@ explore: products {
     sql_on: ${territories.sales_territory_key} = ${sales2015.territory_key} ;;
   }
 
+  join: customer {
+    type: left_outer
+    relationship: many_to_one
+    sql_on: ${sales2015.customer_key}=${customer.customer_key} ;;
+  }
+
 }
 
 explore: product_subcategories {}
