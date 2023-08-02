@@ -57,6 +57,12 @@ explore: sales2015 {
     relationship: many_to_one
     sql_on: ${sales2015.territory_key}=${territories.sales_territory_key} ;;
   }
+
+  join: returns {
+    type: left_outer
+    relationship: many_to_one
+    sql_on: ${products.product_key}=${returns.product_key} ;;
+  }
 }
 
 explore: sales2016 {}
