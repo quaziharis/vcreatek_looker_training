@@ -15,7 +15,7 @@ view: products {
     type: number
     sql: ${TABLE}."ProductKey" ;;
     primary_key: yes
-  }                                   #this is the primary key
+  }
 
   dimension: index {
     type: number
