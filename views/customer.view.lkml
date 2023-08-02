@@ -23,6 +23,7 @@ view: customer {
 
   dimension: customer_key {
     type: number
+    primary_key: yes
     sql: ${TABLE}.CustomerKey ;;
   }
 

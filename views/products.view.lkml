@@ -31,6 +31,16 @@ view: products {
     sql: ${TABLE}.ProductCost ;;
   }
 
+  dimension: product_style_new {
+    type: string
+    sql: case when ${product_style} = 'M' then 'Mens'
+              when ${product_style} = 'W' then 'Womens'
+              when ${product_style} = 'U' then 'Unisexual'
+              else 'Undefined' end;;
+  }
+
+
+
   # A measure is a field that uses a SQL aggregate function. Here are defined sum and average
   # measures for this dimension, but you can also add measures of many different aggregates.
   # Click on the type parameter to see all the options in the Quick Help panel on the right.
@@ -38,6 +48,8 @@ view: products {
   measure: total_product_cost {
     type: sum
     sql: ${product_cost} ;;  }
+
+
   measure: average_product_cost {
     type: average
     sql: ${product_cost} ;;  }

@@ -29,6 +29,7 @@ view: sales2015 {
 
   dimension: index {
     type: number
+    primary_key: yes
     sql: ${TABLE}."index" ;;
   }
 
@@ -50,6 +51,11 @@ view: sales2015 {
   dimension: order_quantity {
     type: number
     sql: ${TABLE}.OrderQuantity ;;
+  }
+
+  measure: order_qty_sum {
+    type: sum
+    sql: ${order_quantity} ;;
   }
 
   dimension: product_key {
