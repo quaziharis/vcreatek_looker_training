@@ -11,6 +11,12 @@ view: products {
     # A dimension is a groupable field that can be used to filter query results.
     # This dimension will be called "Index" in Explore.
 
+  dimension: pk {
+    type: number
+    sql: ${TABLE}."ProductKey" ;;
+    primary_key: yes
+  }
+
   dimension: index {
     type: number
     sql: ${TABLE}."index" ;;
